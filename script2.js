@@ -21,7 +21,7 @@ const gridGenerator = (n) => {
   let strTable = `<div class="scoretable">
         
         <p style="margin:0px; padding:10px;color:rgb(226,212,185); font-family:'Source Code Pro';">
-          Score: 0     Highest: ${highest}
+          Score: 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Highest: ${highest}
         </p>
         
       </div><table>`;
@@ -76,7 +76,7 @@ const gridGenerator = (n) => {
           document.querySelector(".scoretable").innerHTML = `
             
             <p style="margin:0px; padding:10px;color:rgb(226,212,185); font-family:'Source Code Pro';">
-              Score: ${score}     Highest: ${highest}
+              Score: ${score}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Highest: ${highest}
               
               <button id='reset' style="background-color:rgb(166,7,47);color:rgb(255,255,255);height:36px;border-radius:18px;font-family:'Source Code Pro';width:80px;">Reset</button>
             </p>
@@ -95,7 +95,7 @@ const gridGenerator = (n) => {
             
             <p style="margin:0px; padding:10px;color:rgb(226,212,185); font-family:'Source Code Pro';">
               
-              Score: ${score}     Highest: ${highest}
+              Score: ${score}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Highest: ${highest}
               
               <button id='reset' style="background-color:rgb(166,7,47);color:rgb(255,255,255);height:36px;border-radius:18px;font-family:'Source Code Pro';width:80px;">Reset</button>
             </p>
