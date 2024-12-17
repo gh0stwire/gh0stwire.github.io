@@ -19,11 +19,9 @@ const gridGenerator = (n) => {
   let highest = Math.max(...highestArr)==-Infinity?0:Math.max(...highestArr);
 
   let strTable = `<div class="scoretable">
-        
         <p style="margin:0px; padding:10px;color:rgb(226,212,185); font-family:'Source Code Pro';">
           Score: 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Highest: ${highest}
         </p>
-        
       </div><table>`;
   
   for (let i = 0; i < n; i++) {
@@ -74,11 +72,8 @@ const gridGenerator = (n) => {
           if (score > highest) highest = score;
 
           document.querySelector(".scoretable").innerHTML = `
-            
             <p style="margin:0px; padding:10px;color:rgb(226,212,185); font-family:'Source Code Pro';">
-              Score: ${score}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Highest: ${highest}
-              
-              <button id='reset' style="background-color:rgb(166,7,47);color:rgb(255,255,255);height:36px;border-radius:18px;font-family:'Source Code Pro';width:80px;">Reset</button>
+              Score: ${score}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Highest: ${highest}&nbsp;&nbsp;<button id='reset' style="background-color:rgb(166,7,47);color:rgb(255,255,255);height:36px;border-radius:18px;font-family:'Source Code Pro';width:80px;">Reset</button>
             </p>
             `;
 
@@ -92,12 +87,8 @@ const gridGenerator = (n) => {
             return;
           }
           document.querySelector(".scoretable").innerHTML = `
-            
             <p style="margin:0px; padding:10px;color:rgb(226,212,185); font-family:'Source Code Pro';">
-              
-              Score: ${score}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Highest: ${highest}
-              
-              <button id='reset' style="background-color:rgb(166,7,47);color:rgb(255,255,255);height:36px;border-radius:18px;font-family:'Source Code Pro';width:80px;">Reset</button>
+              Score: ${score}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Highest: ${highest}&nbsp;&nbsp;<button id='reset' style="background-color:rgb(166,7,47);color:rgb(255,255,255);height:36px;border-radius:18px;font-family:'Source Code Pro';width:80px;">Reset</button>
             </p>
             `;
 
