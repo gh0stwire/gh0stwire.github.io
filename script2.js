@@ -104,7 +104,6 @@ const gridGenerator = (n) => {
   function resetButtonHandler(x) {
     document.querySelector("#reset").addEventListener("click", () => {
       highestArr.push(highest);
-      console.log(highestArr);
       gridGenerator(x);
     });
   }
