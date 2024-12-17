@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Home </title>
+    <link rel = "stylesheet" href="styles.css">
+  </head>
+
+  <body>
+  
+    <div id="topnav">
+      <a href = "main.html" target="_self"> Home </a>
+      <a href ="page2.html" target="_blank"> Projects </a>
+    </div>
+
+
+    <div id="sidebar">
+      <img src="images/wuv2.png" id="wuv2">
+      <h2>
+        <em>About Me</em>
+      </h2>
+
+      <p>
+        Hey! I'm Aaditya, a freshie at IITB. I am currently studying Computer Science and Engineering at IITB. Topics of interest include cryptography and astronomy. Still learning tons of new things!
+      </p>
+      <p>
+        I enjoy stargazing, listening to music, and making sketches. Favorite sport would be... football? 
+      </p>
+      <p>
+        Feel free to reach out to me at: 
+      </p>
+      <a href="mailto:aadityakumar1404@gmail.com"> <img class="icon" src="images/mail.png" alt="mail" title="mail"> </a>
+      <a href="https://www.instagram.com/an_aadityawith2as"> <img class="icon" src="images/insta.png" alt="insta" title="insta"> </a>
+      <p style="padding:5px; margin:0px;">
+        Cheers!
+      </p>
+    </div>
+    <p style="
+    margin-top: 350px; 
+    padding: 20px; 
+    width:77.65%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    text-align: center; 
+    color: rgb(255, 255, 255); 
+    font-family: 'Source Code Pro'; 
+    font-size: 30px;
+    text-shadow: 0 0 5px rgb(255, 119, 0), 
+                 0 0 10px rgb(255, 119, 0), 
+                 0 0 15px rgb(255, 119, 0), 
+                 0 0 20px rgb(255, 119, 0);">
+    Welcome To My Home Page!
+    <br>
+    <small>Scroll down for a minigame.</small>
+</p>
+
+
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <section class="section1">
+      <div class="header1">
+        <h1>
+          Minigame: Astraburst!
+        </h1>
+      
+      </div>
+      <section class="subsection1">
+        <div class = "header2">
+          <br>
+          
+          <h3>
+            What is Astraburst?
+          </h3>
+    
+          <p>
+            Astraburst is a game of guessing the safe tiles in 'The Asteroid Belt' (a minefield) . This is a single-player game. Read the rules and proceed!
+          </p>
+        </div>
+        <div class = "header2">
+          <h3>
+            How to Play:
+          </h3>
+    
+          <ol>
+            <li>Select a size for the playing field. This can be any among 6x6 and 7x7. </li>
+            <li>Once selected, the playing field should generate. Hovering the mouse over a tile on the playing field should cause changes.</li>
+            <li>Click a tile to select it. If the tile is asteroid-free, then your score shall be incremented by 1. Once clicked, the same tile can't be selected again. </li>
+            <li>If there is an asteroid on a selected tile, it is equivalent to a crash! This now freezes your score. There are 11 asteroids. You can hit the reset button to play again.</li>
+            <li>Have fun!</li>
+          </ol>
+          <br>
+        </div>
+        <div class = "header2">
+          <p> Field size:
+          <select class="dropdown">
+            <option>
+              --- Select a size ---
+            </option>
+            <option>
+                  6 &#215; 6
+            </option>
+            <option>
+                  7 &#215; 7 
+            </option>
+          </select>
+        </p>
+        </div>
+        <div class="container"></div>
+        <br>
+        
+      </section>
+    </section>
+  
+    <script src="script1.js"></script>
+    <script src="script2.js"></script>
+  </body>
+</html>
