@@ -19,11 +19,11 @@ const gridGenerator = (n) => {
   let highest = Math.max(...highestArr)==-Infinity?0:Math.max(...highestArr);
 
   let strTable = `<div class="scoretable">
+        <pre>
         <p style="margin:0px; padding:10px;color:rgb(226,212,185); font-family:'Source Code Pro';">
-          <pre>
           Score: 0     Highest: ${highest}
-          </pre>
         </p>
+        </pre>
       </div><table>`;
   
   for (let i = 0; i < n; i++) {
@@ -74,12 +74,13 @@ const gridGenerator = (n) => {
           if (score > highest) highest = score;
 
           document.querySelector(".scoretable").innerHTML = `
+            <pre>
             <p style="margin:0px; padding:10px;color:rgb(226,212,185); font-family:'Source Code Pro';">
-              <pre>
               Score: ${score}     Highest: ${highest}
-              </pre>
+              
               <button id='reset' style="background-color:rgb(166,7,47);color:rgb(255,255,255);height:36px;border-radius:18px;font-family:'Source Code Pro';width:80px;">Reset</button>
-            </p>`;
+            </p>
+            </pre>`;
 
           resetButtonHandler(n);
         } else if (!cell.classList.contains("active")) {
@@ -91,12 +92,14 @@ const gridGenerator = (n) => {
             return;
           }
           document.querySelector(".scoretable").innerHTML = `
+            <pre>
             <p style="margin:0px; padding:10px;color:rgb(226,212,185); font-family:'Source Code Pro';">
-              <pre>
+              
               Score: ${score}     Highest: ${highest}
-              </pre>
+              
               <button id='reset' style="background-color:rgb(166,7,47);color:rgb(255,255,255);height:36px;border-radius:18px;font-family:'Source Code Pro';width:80px;">Reset</button>
-            </p>`;
+            </p>
+            </pre>`;
 
           resetButtonHandler(n);
         }
