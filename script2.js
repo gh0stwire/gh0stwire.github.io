@@ -20,7 +20,7 @@ const gridGenerator = (n) => {
 
   let strTable = `<div class="scoretable">
         <p style="margin:0px; padding:10px;color:rgb(226,212,185); font-family:'Source Code Pro';">
-          Score: 0  Highest: ${highest}
+          Score: 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Highest: ${highest}
         </p>
       </div><table>`;
   
@@ -73,9 +73,9 @@ const gridGenerator = (n) => {
 
           document.querySelector(".scoretable").innerHTML = `
             <p style="margin:0px; padding:10px;color:rgb(226,212,185); font-family:'Source Code Pro';">
-              Score: ${score}  Highest: ${highest}
-              <button id='reset' style="background-color:rgb(166,7,47);color:rgb(255,255,255);height:36px;border-radius:18px;font-family:'Source Code Pro';width:80px;">Reset</button>
-            </p>`;
+              Score: ${score}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Highest: ${highest}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id='reset' style="background-color:rgb(166,7,47);color:rgb(255,255,255);height:36px;border-radius:18px;font-family:'Source Code Pro';width:80px;">Reset</button>
+            </p>
+            `;
 
           resetButtonHandler(n);
         } else if (!cell.classList.contains("active")) {
@@ -88,9 +88,9 @@ const gridGenerator = (n) => {
           }
           document.querySelector(".scoretable").innerHTML = `
             <p style="margin:0px; padding:10px;color:rgb(226,212,185); font-family:'Source Code Pro';">
-              Score: ${score}  Highest: ${highest}
-              <button id='reset' style="background-color:rgb(166,7,47);color:rgb(255,255,255);height:36px;border-radius:18px;font-family:'Source Code Pro';width:80px;">Reset</button>
-            </p>`;
+              Score: ${score}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Highest: ${highest}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id='reset' style="background-color:rgb(166,7,47);color:rgb(255,255,255);height:36px;border-radius:18px;font-family:'Source Code Pro';width:80px;">Reset</button>
+            </p>
+            `;
 
           resetButtonHandler(n);
         }
@@ -104,7 +104,6 @@ const gridGenerator = (n) => {
   function resetButtonHandler(x) {
     document.querySelector("#reset").addEventListener("click", () => {
       highestArr.push(highest);
-      console.log(highestArr);
       gridGenerator(x);
     });
   }

@@ -32,7 +32,7 @@ html, body {
 body {
   height:2000px;
   background-color: rgb(0, 0, 0);
-  background-image: url(images/project.jpg);
+  background-image: url(project.jpg);
   background-attachment: scroll; 
   background-repeat: no-repeat;
 }
