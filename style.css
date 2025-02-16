@@ -1,0 +1,83 @@
+body{
+  padding:10px;
+}
+button{
+  background-color: rgb(91, 2, 255);
+  color:white;
+  height:36px;
+  width:100px;
+  border-radius: 18px;
+  border-style:solid;
+  border:none;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s, color 0.3s, opacity 0.15s;
+}
+
+button:hover{
+  box-shadow: 5px 5px 0 rgba(0,0,0,0.6);
+  color: white;
+  border-style: solid;
+  color: rgb(91, 2, 255);
+  background-color: white;
+  border-color: rgb(91, 2, 255);
+  cursor:pointer;
+}
+
+button:active{
+  opacity: 0.6;
+}
+
+textarea{
+  border-style:solid;
+  border-radius: 8px;
+  width: 500px; 
+  height: 300px; 
+  font-size: 18px; 
+  padding: 20px;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+.tooltip-container input {
+  padding: 5px;
+  font-size: 16px;
+}
+.tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  white-space: nowrap;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s;
+  pointer-events: none;
+  z-index: 1000;
+}
+.tooltip-container input:hover ~ .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+#intro{
+  background-color: rgb(91, 2, 255);
+  line-height:1.5;
+  color: white;
+  padding: 20px;
+  font-family: monospace;
+  border-radius: 10px;
+}
+
+#csv{
+  border-style: solid;
+  padding:10px;
+  border-radius: 5px;
+  
+}
