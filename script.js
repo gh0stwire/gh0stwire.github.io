@@ -16,14 +16,38 @@ const modify=() => {
 
   // Modifying the data.
   n = data[0].length
-  let keys = data[0]
+  let keys = data[0].map(key => key.trim());
   let mdata = data.map(row => 
       Object.fromEntries(keys.map((key, i) => [key, row[i]]))
   );
   mdata.shift();
+  mdata = mdata.map(item => {
+    let cleanedItem = {};
+    for (let key in item) {
+      cleanedItem[key.trim()] = item[key]; // Remove spaces around the key
+    }
+    return cleanedItem;
+  });        
   return mdata;
 }
 
+const modifier = (strg) =>{
+  const data = strg.split("\n").map(row => row.split(",").map(value => isNaN(value) ? value : Number(value)));
+  n = data[0].length
+  let keys = data[0].map(key => key.trim());
+  let mdata = data.map(row => 
+      Object.fromEntries(keys.map((key, i) => [key, row[i]]))
+  );
+  mdata.shift();
+  mdata = mdata.map(item => {
+    let cleanedItem = {};
+    for (let key in item) {
+      cleanedItem[key.trim()] = item[key]; // Remove spaces around the key
+    }
+    return cleanedItem;
+  });        
+  return mdata;
+}
 
 
 // tree remembers path.
@@ -32,14 +56,14 @@ const gimp = (arr, lrnf) => {
     let keys= Object.keys(arr[0]);
   	let feature_best = [];
   
-  	for (let i = 0; i < keys.length - 1; i++) {  // Excluding "Truth"
+  	for (let i = 0; i < keys.length - 1; i++) {  
 		let key = keys[i];
 
 		// Clone & Sort Data
 		let sortedArr = [...arr].sort((a, b) => a[key] - b[key]);
 
 		// Extract key values & truth values
-		let keyvalues = sortedArr.map(obj => [obj[key], obj["Truth"]]);
+		let keyvalues = sortedArr.map(obj => [obj[key], obj[keys[keys.length-1]]]);
 	  
 		// Gini impurity calculation
 		let feature_imp = [];
@@ -77,7 +101,7 @@ const gimp = (arr, lrnf) => {
   	feature_best[0].pop();
   	let key = feature_best[0][0];
   	 // first crude prediction:
-  	let truthAvg = arr.reduce((sum, row) => sum + row["Truth"], 0) / arr.length;
+  	let truthAvg = arr.reduce((sum, row) => sum + row[keys[keys.length-1]], 0) / arr.length;
   	let pred=[];
   	for (let i=0; i<arr.length; i++){
 		pred[i]=truthAvg;
@@ -163,12 +187,17 @@ const gboost = (mdata, n, pred, lrnf) => {
   
 	let clubbed = mdata.map((row, i) => [sorter[0], row[sorter[0]], residuals[i]]);
 	for (let i=0; i<residuals.length; i++){
+    //console.log(clubbed[i], sorter)
 		if 	(clubbed[i][1]<=sorter[1]){
+      //console.log(`lavg: ${lavg}`)
+      //console.log(`term to be added: ${clubbed[i][2]}`)
 			lavg+=clubbed[i][2];
 			lcount+=1;
 		} else {
+      //console.log(`ravg: ${ravg}`)
+      //console.log(`term to be added: ${clubbed[i][2]}`)
 			ravg+=clubbed[i][2];
-		  	rcount+=1;
+		  rcount+=1;
 		}
 	}
   	
@@ -201,11 +230,19 @@ const predmodify=()=>{
 
   // Modifying the data.
   n = data[0].length
-  let keys = data[0]
+  let keys = data[0].map(key => key.trim());
   let mdata = data.map(row => 
       Object.fromEntries(keys.map((key, i) => [key, row[i]]))
   );
   mdata.shift();
+  mdata = mdata.map(item => {
+    let cleanedItem = {};
+    for (let key in item) {
+      cleanedItem[key.trim()] = item[key]; // Remove spaces around the key
+    }
+    return cleanedItem;
+  });     
+  //console.log(mdata)
   return mdata;
 }
 
@@ -214,8 +251,28 @@ const predict = () => {
     let dataset=predmodify()
     let results=[]
     for (let j=0; j<dataset.length; j++){
-      let initial= modify().reduce((sum, row) => sum + row["Truth"], 0) / modify().length;
+      let initial;
+      let csvString=document.querySelector("#csvString").value;
+      if (csvString){
+        const data = csvString.split("\n").map(row => row.split(",").map(value => isNaN(value) ? value : Number(value)));
+        n = data[0].length
+        let keys = data[0].map(key => key.trim());
+        //console.log("This is keys:")
+        //console.log(keys);
+        initial= modify().reduce((sum, row) => sum + row[keys[keys.length-1]], 0) / modify().length;
+      } else {
+        const data = pre_data.split("\n").map(row => row.split(",").map(value => isNaN(value) ? value : Number(value)));
+        n = data[0].length
+        let keys = data[0].map(key => key.trim());
+        //console.log("This is keys:")
+        //console.log(keys);
+        initial= modifier(pre_data).reduce((sum, row) => sum + row[keys[keys.length-1]], 0) / modifier(pre_data).length;
+      }
+      //console.log(initial);
+      
       for (let i=0; i<tree.length; i++){
+        //console.log("Data:")
+        //console.log(dataset[j][tree[i][0]], tree[i][1], tree[i][2], tree[i][3]);
         dataset[j][tree[i][0]] <= tree[i][1] ? initial += tree[i][2] : initial += tree[i][3];
       }
       if(Object.values(dataset[j])[0]){
@@ -238,7 +295,8 @@ document.querySelector("#submit").addEventListener('click', ()=>{
     if (n && lrnf){
       learn(modify(),n, lrnf);
     }else{learn(modify(),1000, 0.1);}
-    //console.log(tree);
+    //console.log(modify());
+    console.log(tree);
   } else {
     alert("Please enter non-empty training data.")
   }
@@ -249,6 +307,7 @@ document.querySelector("#psubmit").addEventListener('click', ()=>{
 })
 
 
+let pre_data;
 document.querySelector("#abc").addEventListener('click', () => {
   const fileInput = document.querySelector("#csv");
   const file = fileInput.files[0]; // Get the selected file
@@ -260,26 +319,20 @@ document.querySelector("#abc").addEventListener('click', () => {
 
   const reader = new FileReader();
   reader.onload = (e) => {
-    const pre_data=(e.target.result)
-    const modifier = (strg) =>{
-        const data = strg.split("\n").map(row => row.split(",").map(value => isNaN(value) ? value : Number(value)));
-        n = data[0].length
-        let keys = data[0]
-        let mdata = data.map(row => 
-            Object.fromEntries(keys.map((key, i) => [key, row[i]]))
-        );
-        mdata.shift();
-        console.log(mdata);
-        return mdata;
-    }
+    pre_data=(e.target.result)
     let itn=Number(document.querySelector("#itn").value);
     let lrnf = Number(document.querySelector("#lrnf").value);
+    //console.log(modifier(pre_data))
     if(pre_data){
+      alert("File successfully submitted.")
       learn(modifier(pre_data),itn || 1000, lrnf || 0.1);
+      //console.log(tree)
     } else {
-      alert("No csv file chosen / csv file is empty.")
+      alert("No csv file chosen / csv file is empty")
     }
   }; 
   reader.readAsText(file); 
   }
+  
 )
+
