@@ -2,18 +2,188 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Terms of Service - Webmail Extension</title>
-    <style>body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; }</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Mail IITB</title>
+    <style>
+        /* Matching your Privacy Policy styles exactly */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .last-updated {
+            font-style: italic;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+        
+        .policy-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        section {
+            margin-bottom: 35px;
+        }
+        
+        h2 {
+            color: #4285f4;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        ul {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #4285f4;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+            margin-top: 20px;
+        }
+        
+        .contact-info a {
+            color: #4285f4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eaeaea;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Terms of Service</h1>
-    <p>Last Updated: February 11, 2026</p>
-    <p>By installing the Webmail Extension, you agree to these terms:</p>
-    <ul>
-        <li><strong>Service:</strong> We provide a productivity suite that summarizes webmail content and allows users to create and manage events on Google Calendar based on those summaries.</li>
-        <li><strong>Privacy:</strong> Your data is handled as described in our <a href="privacy.html">Privacy Policy</a>.</li>
-        <li><strong>Liability:</strong> This software is provided "as-is" without warranty of any kind.</li>
-    </ul>
-    <p>Contact: <a href="mailto:dav.ugac.iitb.ac.in">dav.ugac.iitb.ac.in</a></p>
+    <div class="container">
+        <header>
+            <h1>Terms of Service</h1>
+            <p>Mail IITB Productivity Suite</p>
+            <p class="last-updated">Last Updated: <span id="currentDate"></span></p>
+        </header>
+        
+        <div class="policy-content">
+            <section>
+                <h2>1. Acceptance of Terms</h2>
+                <p>By installing and using the <strong>Mail IITB</strong> browser extension, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the extension.</p>
+            </section>
+            
+            <section>
+                <h2>2. Description of Service</h2>
+                <p>Mail IITB is a productivity tool designed to enhance your webmail experience. Key features include:</p>
+                <ul>
+                    <li>AI-powered summarization of webmail content using Gemini-Flash-2.5.</li>
+                    <li>Manual and semi-automated scheduling of Google Calendar events based on email content.</li>
+                    <li>Email draft generation and response assistance.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Use of Google Data</h2>
+                <p>Our service integrates with the Google Calendar API to allow you to create and manage schedule events. Your data usage is governed by our <a href="privacy.html" style="color:#4285f4; text-decoration: underline;">Privacy Policy</a>, which complies with Google API Services User Data Policy requirements.</p>
+            </section>
+            
+            <section>
+                <h2>4. User Responsibilities</h2>
+                <div class="highlight-box">
+                    <p>While our AI provides summaries and drafts, users are responsible for:</p>
+                    <ul>
+                        <li>Verifying the accuracy of AI-generated summaries before relying on them.</li>
+                        <li>Reviewing Calendar event details (time, date, location) before final confirmation.</li>
+                        <li>Maintaining the security of their browser and Google Account.</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section>
+                <h2>5. Limitation of Liability</h2>
+                <p>Mail IITB is provided on an "AS IS" and "AS AVAILABLE" basis. To the maximum extent permitted by law, the developers shall not be liable for any missed appointments, data errors, or any indirect damages resulting from the use of this service.</p>
+            </section>
+            
+            <section>
+                <h2>6. Contact Us</h2>
+                <p>If you have any questions regarding these terms, please reach out to the development team:</p>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:dav.ugac@iitb.ac.in">dav.ugac@iitb.ac.in</a></p>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>&copy; <span id="currentYear"></span> Mail IITB. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Set current date
+        const currentDate = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        document.getElementById('currentDate').textContent = currentDate;
+        
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
