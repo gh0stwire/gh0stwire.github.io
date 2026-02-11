@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail IITB | UGAC Productivity Suite</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Brand Header */
+        header {
+            background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
 
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: -40px auto 0;
+            padding: 20px;
+        }
+        
+        .main-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: #e8f0fe;
+            color: #1967d2;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .feature-item {
+            padding: 25px;
+            border: 1px solid #f0f0f0;
+            border-radius: 15px;
+            background: #fff;
+            transition: transform 0.2s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .feature-item h3 {
+            color: #34a853;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* How it Works / Integration Section */
+        .integration-box {
+            background-color: #f1f3f4;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border-left: 5px solid #4285f4;
+        }
+
+        .integration-box h2 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            color: #202124;
+        }
+
+        /* Footer Links */
+        .footer-links {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .footer-links a {
+            color: #5f6368;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: #4285f4;
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: #70757a;
+            font-size: 0.9rem;
+        }
+
+        .ugac-logo {
+            font-weight: 800;
+            color: #3c4043;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.2rem; }
+            .footer-links a { display: block; margin: 15px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mail IITB</h1>
+        <p>Enhancing Academic Productivity for the IITB Community</p>
+    </header>
+    
+    <div class="container">
+        <div class="main-card">
+            <center><div class="badge">UGAC Student Initiative</div></center>
+            
+            <section style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
+                <h2 style="margin-bottom: 15px;">Smart Webmail, Unified Schedule.</h2>
+                <p style="color: #5f6368;">Mail IITB is a browser extension developed to help students manage high volumes of academic correspondence by integrating AI summarization with Google Calendar.</p>
+            </section>
+            
+            <div class="features">
+                <div class="feature-item">
+                    <h3>Summarize</h3>
+                    <p>Leverage Gemini-Flash-2.5 to turn long webmail threads into concise, actionable bullet points instantly.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Sync</h3>
+                    <p>Identify deadlines and meeting invites within emails and add them to your Google Calendar with a single click.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Draft</h3>
+                    <p>Generate context-aware email responses to save time on routine academic communication.</p>
+                </div>
+            </div>
+
+            <div class="integration-box">
+                <h2>Google Calendar Integration</h2>
+                <p>Mail IITB requests <strong>Google Calendar API</strong> access to create and manage events. We access your calendar data only when you explicitly click to schedule a task. Your data is processed in real-time and is never stored on our servers or used for AI model training.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="mailto:dav.ugac@iitb.ac.in">Support Contact</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>IIT Bombay, Powai, Mumbai - 400076</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">This is a student-led initiative. All rights reserved &copy; 2026.</p>
+    </footer>
+
+</body>
+</html>
